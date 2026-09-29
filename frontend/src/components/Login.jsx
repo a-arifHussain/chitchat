@@ -19,7 +19,7 @@ const Login = () => {
     if (!formData.email || !formData.password) return;
     try {
       const res = await axios.post(
-        "http://localhost:5001/user/login",
+        "https://chitchat-9dj6.onrender.com/user/login",
         {
           ...formData,
         },

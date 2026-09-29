@@ -13,7 +13,6 @@ function PrivateRoute({ children }) {
 }
 
 function App() {
-  // socket.on("messsage", (msg) => console.log("socket connected"));
   return (
     <div className="App">
       <Routes>
