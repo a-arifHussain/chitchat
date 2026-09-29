@@ -1,0 +1,90 @@
+.NavBar{
+    /* display: inline-block; */
+    /* flex-direction: column; */
+    height: 100%;
+    padding:  10px;
+    border: 2px solid gray;
+    /* border-right: none; */
+
+    border-radius: 10px 0 0 10px;
+
+    background-color: rgb(0, 12, 24);
+        backdrop-filter: blur(20px);
+
+}
+
+.NavBar .logo{
+    width: 50px;
+    height: 50px;
+}
+
+.navLink{
+
+    margin:20px 0 ;
+
+}
+
+
+.navLink div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    padding: 10px;
+    font-size: 11px;
+    border-radius: 5px;
+}
+
+.navLink div:hover{
+    background-color: rgba(128, 128, 128, 0.437);
+}
+.navLink div:active{
+    background-color: brown;
+}
+
+
+.navLink i{
+    font-size: 18px;
+}
+ 
+.profileImg{
+    display: flex;
+    height: 40%;
+    align-items: end;
+    justify-content: center;
+}
+.profileImg img{
+    border: 2px solid rgb(146, 134, 134);
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+}
+
+
+
+/*  styling for small screen :- */
+
+@media (max-width :450px) {
+    .NavBar{
+        padding: 8px 0;
+    }
+
+   
+
+    .navLink div {
+            padding: 10px 5px;
+     }
+    
+     .profileImg img {
+
+        width: 40px;
+        height: 40px;
+
+     }
+}
+
+@media (min-width : 400px) {
+    .NavBar {
+            padding: 10px;
+        }
+}
