@@ -13,20 +13,7 @@ async function handleUserLogin(req, res) {
   ).populate("friends");
 
   if (!user) return res.status(404).json({ msg: "user not found" });
-  // console.log(
-  //   "_id",
-  //   user._id,
-  //   "email",
-  //   user.email,
-  //   "name",
-  //   user.name,
-  //   "profileImg",
-  //   user.profileImg,
-  //   "lastSeen",
-  //   user.lastSeen,
-  //   "isOnline",
-  //   user.isOnline,
-  // );
+
   const isPasswordMatch = await user.matchUserPassword(body.password);
 
   if (!isPasswordMatch) {
@@ -111,8 +98,7 @@ const handleAddFriend = async (req, res) => {
     await User.findByIdAndUpdate(friendId, {
       $addToSet: { friends: user._id },
     });
-    // console.log(friendId, " friendsID");
-    // console.log(req.user, "sender user");
+
     res.json(userResult);
   } catch (err) {
     res.json({ err });

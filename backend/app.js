@@ -23,7 +23,8 @@ initSocket(server);
 
 app.use(
   cors({
-    origin: true,
+    origin: ["https://chitchat-arif.vercel.app", "http://localhost:3000"], // your frontend origin
+
     credentials: true,
   }),
 );
