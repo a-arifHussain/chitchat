@@ -3,7 +3,6 @@ import "./Home.css";
 import NavBar from "./NavBar";
 import Contact, { Dm } from "./Contact";
 import ChatBox from "./ChatBox";
-import { useUser } from "../context/UserContext";
 
 const Home = () => {
   const [contactRender, setContactRender] = useState(<Dm />);
