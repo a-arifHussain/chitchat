@@ -18,7 +18,7 @@ export const Dm = () => {
     const isFriend = user.friends.some((item) => item._id === friendsId);
     if (!isFriend) {
       const res = await axios.patch(
-        `http://localhost:5001/user/addfriend/${friendsId}`,
+        `https://chitchat-9dj6.onrender.com/user/addfriend/${friendsId}`,
         {},
         { withCredentials: true },
       );
@@ -40,7 +40,7 @@ export const Dm = () => {
 
     try {
       const res = await axios.get(
-        `http://localhost:5001/user/search/${name}`,
+        `https://chitchat-9dj6.onrender.com/user/search/${name}`,
 
         { withCredentials: true },
       );
@@ -182,7 +182,7 @@ export const Profile = () => {
   // handle user log out:-
   const handleLogOut = async () => {
     const res = await axios.post(
-      "http://localhost:5001/user/logout",
+      "https://chitchat-9dj6.onrender.com/user/logout",
       {},
       {
         withCredentials: true,
@@ -200,7 +200,7 @@ export const Profile = () => {
     // console.log("image:- ", image, "/n oldUsr;=", oldUrl);
     try {
       const res = await axios.post(
-        "http://localhost:5001/user/updateprofileimg",
+        "https://chitchat-9dj6.onrender.com/user/updateprofileimg",
         { image, oldUrl },
         {
           withCredentials: true,

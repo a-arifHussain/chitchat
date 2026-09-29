@@ -28,9 +28,12 @@ const Register = () => {
   const handleUserRegister = async (e) => {
     e.preventDefault();
     if (matchConfirmPassword()) {
-      const res = await axios.post("http://localhost:5001/user/signUp", {
-        ...formData,
-      });
+      const res = await axios.post(
+        "https://chitchat-9dj6.onrender.com/user/signUp",
+        {
+          ...formData,
+        },
+      );
 
       res.data.user && navigate("/login");
     } else {

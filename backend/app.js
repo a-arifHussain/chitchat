@@ -11,6 +11,7 @@ const { default: mongoose } = require("mongoose");
 const { restrictUserAuth } = require("./middleware/authUser");
 const { initSocket } = require("./service/webSocket");
 
+const PORT = process.env.PORT || 5001;
 // connecting mongoDb :-
 mongoose
   .connect(process.env.MONGODB_CONNECTION_STRING)
@@ -39,6 +40,6 @@ app.use("/user", userRouter);
 
 app.use("/message", restrictUserAuth, messageRouter);
 
-server.listen(5001, () => {
-  console.log("server is running at port 5001");
+server.listen(PORT, () => {
+  console.log(`server is running at port ${PORT}`);
 });

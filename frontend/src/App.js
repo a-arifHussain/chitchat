@@ -12,10 +12,6 @@ function PrivateRoute({ children }) {
   return user ? children : <Navigate to="/login" />;
 }
 
-// import { io } from "socket.io-client";
-
-// const socket = io("http://localhost:5001/");
-
 function App() {
   // socket.on("messsage", (msg) => console.log("socket connected"));
   return (

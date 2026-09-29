@@ -17,9 +17,12 @@ export const UserProvider = ({ children }) => {
   useEffect(() => {
     async function getLogedInUser() {
       try {
-        const res = await axios.get("http://localhost:5001/user/logedInUser", {
-          withCredentials: true,
-        });
+        const res = await axios.get(
+          "https://chitchat-9dj6.onrender.com/user/logedInUser",
+          {
+            withCredentials: true,
+          },
+        );
         setUser(res.data);
         navigate("/");
       } catch (err) {

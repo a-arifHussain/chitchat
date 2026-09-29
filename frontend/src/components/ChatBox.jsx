@@ -4,7 +4,7 @@ import { useUser } from "../context/UserContext";
 import axios from "axios";
 import { io } from "socket.io-client";
 
-const socket = io("http://localhost:5001");
+const socket = io("https://chitchat-9dj6.onrender.com");
 const ChatBox = () => {
   const { user, chatFriend, messageList, setMessageList, setNewMessage } =
     useUser();
@@ -13,7 +13,7 @@ const ChatBox = () => {
     try {
       if (!chatFriend) return;
       const res = await axios.get(
-        `http://localhost:5001/message/allmessage/${chatFriend._id}`,
+        `https://chitchat-9dj6.onrender.com/message/allmessage/${chatFriend._id}`,
         {
           withCredentials: true,
         },
@@ -191,7 +191,7 @@ const InputSection = () => {
 
       try {
         const res = await axios.post(
-          `http://localhost:5001/message/create/${chatFriend._id}`,
+          `https://chitchat-9dj6.onrender.com/message/create/${chatFriend._id}`,
           formData,
           {
             headers: { "Content-Type": "multipart/form-data" },
